@@ -1,33 +1,3 @@
-# Canvas Keyframes (vue-canvas-keyframes)
-
-Canvas Keyframes
-
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+#CanvasKeyframes
+Отрисовка ключевых кадров на Canvas по скроллу. <br>
+<a href="https://eltsov-dmitry.github.io/canvas-keyframes/dist/spa/">Демо</a>

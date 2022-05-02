@@ -13,14 +13,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, ref } from 'vue';
+import {
+  defineComponent,
+  watch,
+  ref,
+  onMounted,
+} from 'vue';
+import { useQuasar } from 'quasar';
 import { coreKeyframes } from 'components/Background/coreKeyframes';
 import { coreCanvas } from 'components/Background/coreCanvas';
 
 export default defineComponent({
   name: 'TheBackground',
   setup() {
+    const $q = useQuasar();
     const canvasRef = ref();
+
+    const setLoading = (val: boolean) => (val ? $q.loading.show() : $q.loading.hide());
 
     const keyframeCore = coreKeyframes();
     const canvasCore = coreCanvas();
@@ -31,7 +40,12 @@ export default defineComponent({
 
       if (keyframes.value.length) {
         canvasCore.start(canvas, keyframes.value, currentFrame);
+        setLoading(false);
       }
+    });
+
+    onMounted(() => {
+      setLoading(true);
     });
 
     return {
